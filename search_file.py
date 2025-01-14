@@ -9,5 +9,10 @@ def search_file(query, source, json_dest):
     convert_to_json.convert_to_json("intersection.txt", json_dest)
 
 
+def search_with_cached(cache, source, json_dest):
+    list_intersection.intersect(source, cache, "intersection.txt")
+    convert_to_json.convert_to_json("intersection.txt", json_dest)
+
+
 if __name__ == "__main__":
-    search_file("id:rw otag:draw sort:edhrec", "card_data.txt", "json.txt")
+    search_file("id=rb is:commander sort:edhrec", "mabel_card_data.txt", "json.txt")
