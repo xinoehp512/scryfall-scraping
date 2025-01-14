@@ -5,6 +5,7 @@ import requests
 import json
 
 import get_data_from_names
+import list_operations
 import search
 import search_file
 
@@ -38,7 +39,6 @@ def main():
 
 
 if __name__ == "__main__":
-    # get_data_from_names.get_data_from_names("deans_cardlist.txt", "deans_card_data.txt")
-    # search_file("id:rw sort:edhrec", "mabel_card_data.txt", "json.txt")
-    # search.search("is:commander", "is_commander_search_result.txt")
-    search_file.search_with_cached("is_commander_search_result.txt", "deans_card_data.txt", "json.txt")
+    result_folder = "files/search_results/"
+    search.search("game:paper sort:edhrec", result_folder+"edhrec_sort.txt")
+    # search_file.search_with_cached(result_folder+"is_black_search_result.txt", "files/deans_card_data.txt", "json.txt")
